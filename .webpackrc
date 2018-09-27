@@ -1,0 +1,26 @@
+{
+  "extraBabelPlugins": [
+    ["import", {
+      "libraryName": "antd",
+      "libraryDirectory": "es",
+      "style": true
+    }]
+  ],
+
+   "proxy": {
+    "/profile": {
+      "target": "http://api.yunee.com/mock/5adff09c132bb70021c5edcf",
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/profile": "/profile-service"
+      }
+    }
+  },
+  "env": {
+    "development": {
+      "extraBabelPlugins": [
+        "dva-hmr"
+      ]
+    }
+  }
+}
